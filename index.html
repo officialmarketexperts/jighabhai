@@ -3,500 +3,213 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gujrati Trader - Premium Stock Trading</title>
+<title>Gujarati Trader</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<!-- ================= FIXED META PIXEL ================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '848758444744237');
+// Removed duplicate PageView - automatic fires once
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=848758444744237&ev=PageView&noscript=1"
+/></noscript>
+<!-- ================= END META PIXEL ================= -->
 
 <style>
-/* 👑 CROWNS ON i & t + RED-GREEN BUTTON */
-h1 {
-    margin-top: 25px !important;
-    position: relative;
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#16213e 100%);
+color:#f0f0f0;
+text-align:center;
+min-height:100vh;
+overflow-x:hidden;
 }
 
-h1::before {
-    content: '\f905';
-    position: absolute;
-    top: -28px;
-    left: 38%;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 20px;
-    background: linear-gradient(45deg, #facc15, #fde68a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: crownFloat 3s ease-in-out infinite;
-    z-index: 5;
+.container{
+max-width:420px;
+margin:auto;
+padding:30px 20px 50px;
+position:relative;
 }
 
-h1::after {
-    content: '\f905';
-    position: absolute;
-    top: -28px;
-    right: 38%;
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 20px;
-    background: linear-gradient(45deg, #facc15, #fde68a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: crownFloat 3s ease-in-out infinite reverse;
-    z-index: 5;
+@keyframes glowPulse{
+0%,100%{box-shadow:0 0 20px rgba(212,175,55,.5),inset 0 0 20px rgba(212,175,55,.1)}
+50%{box-shadow:0 0 40px rgba(212,175,55,.8),inset 0 0 30px rgba(212,175,55,.2)}
 }
 
-@keyframes crownFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
 }
 
-.telegram-btn {
-    background: linear-gradient(135deg, #10b981, #059669, #047857) !important;
-    box-shadow: 0 15px 40px rgba(16, 185, 129, 0.5) !important;
-    color: #fff !important;
-    min-height: 62px !important;
-    padding: 20px 26px !important;
-    font-size: 16px !important;
+.logo-wrap{
+margin:25px 0 20px;
+display:flex;justify-content:center;
+perspective:1000px;
+}
+.logo-gold{
+width:160px;height:160px;border-radius:50%;
+padding:4px;background:linear-gradient(135deg,#f4d03f,#f39c12,#f4d03f);
+box-shadow:0 15px 35px rgba(244,208,63,.4);
+animation:glowPulse 2.5s ease-in-out infinite;
+transform-style:preserve-3d;
+transition:transform .3s ease;
+}
+.logo-gold:hover{transform:rotateY(10deg) rotateX(10deg);}
+.logo-gold img{
+width:100%;height:100%;border-radius:50%;
+background:linear-gradient(135deg,#1a1a2e,#16213e);
+filter:drop-shadow(0 2px 8px rgba(0,0,0,.5));
 }
 
-.telegram-btn i {
-    color: #fff !important;
+h1{
+margin:20px 0 10px;
+font-size:32px;font-weight:900;
+letter-spacing:2px;background:linear-gradient(135deg,#f4d03f,#f39c12);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+background-clip:text;
+text-shadow:0 0 20px rgba(244,208,63,.5);
+animation:float 4s ease-in-out infinite;
+}
+.sub{
+font-size:15px;color:#c0a375;
+font-weight:500;letter-spacing:1px;
+text-shadow:0 1px 3px rgba(0,0,0,.5);
+margin-bottom:25px;
 }
 
-/* ✅ ONLY CIRCLE PHOTO - NO BORDERS */
-.logo-wrap {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 15px;
+.info-box{
+margin:25px 0;background:linear-gradient(145deg,#1a1a2e,#16213e);
+border-radius:20px;padding:20px 22px;
+text-align:left;border:1px solid rgba(244,208,63,.2);
+box-shadow:0 10px 30px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+}
+.info-box h3{margin:0 0 15px 0;font-size:18px;color:#f4d03f;font-weight:700}
+.info-box li{
+margin:12px 0;font-size:15px;
+opacity:.9;transition:opacity .3s ease;
+}
+.info-box li:hover{opacity:1;}
+.info-box li::marker{color:#f39c12;}
+
+.join-btn{
+margin:30px auto 20px;display:block;
+width:100%;max-width:380px;padding:20px 30px;
+font-size:20px;font-weight:900;border-radius:25px;
+color:#fff;text-decoration:none;
+background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+box-shadow:0 15px 35px rgba(102,126,234,.4),0 5px 15px rgba(0,0,0,.3);
+animation:glowPulse 2.8s ease-in-out infinite;
+transition:all .3s ease;position:relative;overflow:hidden;
+}
+.join-btn:hover{
+transform:translateY(-3px);box-shadow:0 20px 45px rgba(102,126,234,.5);
+}
+.join-btn::before{
+content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+transition:left .5s;
+}
+.join-btn:hover::before{left:100%;}
+
+.live{
+margin:15px 0;font-size:20px;font-weight:800;
+color:#f4d03f;text-shadow:0 0 15px rgba(244,208,63,.6);
+animation:float 3s ease-in-out infinite;
 }
 
-.logo-inner {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    overflow: hidden;
+.client-box{
+margin:20px auto;background:linear-gradient(145deg,#1a1a2e,#16213e);
+border-radius:20px;padding:20px;max-width:380px;
+border:1px solid rgba(244,208,63,.2);
+box-shadow:0 10px 30px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+}
+.profit{
+font-size:24px;font-weight:900;
+background:linear-gradient(135deg,#00ff88,#00cc6a);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+margin-bottom:8px;
+}
+.small{font-size:13px;color:#9aa0a6;opacity:.8}
+
+.warn{
+margin-top:25px;font-size:12px;color:#888;
+line-height:1.6;max-width:340px;margin-left:auto;margin-right:auto;
+background:rgba(0,0,0,.3);padding:15px;border-radius:12px;
+border-left:3px solid #f39c12;
 }
 
-.logo-inner img {
-    width: 100% !important;
-    height: 100% !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    display: block !important;
-}
-
-/* BAKI SAB SAME */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #1e1b4b 0%, #020617 70%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 12px;
-    overflow-y: auto;
-    position: relative;
-}
-
-body::-webkit-scrollbar { display: none; }
-
-.particle {
-    position: fixed;
-    width: 3px;
-    height: 3px;
-    background: rgba(250, 204, 21, 0.6);
-    border-radius: 50%;
-    animation: float 20s linear infinite;
-    z-index: 1;
-}
-
-@keyframes float {
-    from { transform: translateY(110vh); }
-    to { transform: translateY(-130vh); }
-}
-
-.card {
-    position: relative;
-    width: 100%;
-    max-width: 340px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border-radius: 24px;
-    padding: 28px 20px 25px;
-    text-align: center;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
-    overflow: visible;
-    margin-bottom: 15px;
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border-radius: 24px;
-    background: linear-gradient(120deg, transparent, rgba(250,204,21,0.3), transparent);
-    animation: borderMove 8s linear infinite;
-    opacity: 0.4;
-    z-index: 1;
-}
-
-@keyframes borderMove {
-    from { transform: translateX(-100%); }
-    to { transform: translateX(100%); }
-}
-
-.title-section {
-    position: relative;
-    margin-bottom: 22px;
-}
-
-h1 {
-    font-size: 23px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #facc15, #fde68a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.2;
-    position: relative;
-    z-index: 3;
-}
-
-.sub {
-    font-size: 13px;
-    color: #c7d2fe;
-    font-weight: 500;
-    margin-bottom: 25px;
-    line-height: 1.4;
-}
-
-.features {
-    text-align: left;
-    margin-bottom: 30px;
-}
-
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 14px;
-    margin-bottom: 15px;
-    color: #e5e7eb;
-    line-height: 1.5;
-    padding: 14px;
-    background: rgba(250, 204, 21, 0.08);
-    border-radius: 14px;
-    border-left: 3px solid #facc15;
-    transition: all 0.3s ease;
-}
-
-.feature:hover {
-    transform: translateX(6px);
-    background: rgba(250, 204, 21, 0.15);
-}
-
-.feature i {
-    color: #facc15;
-    font-size: 18px;
-    animation: iconFloat 3s ease-in-out infinite;
-}
-
-@keyframes iconFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-3px); }
-}
-
-.telegram-btn {
-    width: 100%;
-    font-weight: 700;
-    border: none;
-    border-radius: 22px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    animation: btnPulse 2s ease-in-out infinite;
-    position: relative;
-    z-index: 3;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-}
-
-@keyframes btnPulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-}
-
-.telegram-btn:hover {
-    transform: translateY(-2px);
-}
-
-.telegram-btn:active {
-    transform: scale(0.96);
-}
-
-.telegram-btn i {
-    font-size: 22px;
-}
-
-.stars {
-    margin: 25px 0 12px;
-    color: #facc15;
-}
-
-.stars i {
-    font-size: 16px;
-    margin: 0 2px;
-    animation: starTwinkle 2s ease-in-out infinite;
-}
-
-@keyframes starTwinkle {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 1; transform: scale(1.2); }
-}
-
-.rating {
-    font-size: 13px;
-    color: #c7d2fe;
-    font-weight: 500;
-    margin-bottom: 22px;
-}
-
-.customers-box {
-    margin: 22px 0 28px !important;
-    padding: 20px !important;
-    background: rgba(250, 204, 21, 0.1);
-    backdrop-filter: blur(20px);
-    border-radius: 20px;
-    border: 2px solid rgba(250, 204, 21, 0.3);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-    position: relative;
-    z-index: 3 !important;
-    max-height: 180px !important;
-    min-height: 150px !important;
-    overflow-y: auto !important;
-}
-
-.customers-title {
-    font-size: 14px !important;
-    font-weight: 700 !important;
-    color: #facc15 !important;
-    margin-bottom: 14px !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
-
-.customers-title i {
-    font-size: 16px !important;
-}
-
-.customer-list {
-    max-height: 120px !important;
-    overflow-y: auto !important;
-    min-height: 100px !important;
-}
-
-.customer-item {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    padding: 12px 14px !important;
-    font-size: 13.5px !important;
-    border-bottom: 1px solid rgba(250, 204, 21, 0.2) !important;
-    background: rgba(255, 255, 255, 0.08) !important;
-    margin-bottom: 6px !important;
-    border-radius: 10px !important;
-}
-
-.customer-item:last-child {
-    border-bottom: none !important;
-    margin-bottom: 0 !important;
-}
-
-.customer-name {
-    color: #e5e7eb !important;
-    font-weight: 600 !important;
-}
-
-.profit {
-    font-weight: 700 !important;
-    font-size: 13px !important;
-    padding: 6px 12px !important;
-    border-radius: 8px !important;
-    min-width: 110px !important;
-    text-align: center !important;
-}
-
-.profit.positive {
-    color: #10b981 !important;
-    background: rgba(16, 185, 129, 0.2) !important;
-}
-
-.profit.negative {
-    color: #ef4444 !important;
-    background: rgba(239, 68, 68, 0.2) !important;
-}
-
-.disclaimer {
-    font-size: 11.5px;
-    color: #94a3b8;
-    line-height: 1.6;
-    text-align: center;
-    padding: 14px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 14px;
-    position: relative;
-    z-index: 3;
+@media (max-width:480px){
+.container{padding:20px 15px 40px}
+.logo-gold{width:140px;height:140px;padding:3px}
+h1{font-size:28px;letter-spacing:1.5px}
+.join-btn{padding:18px 25px;font-size:18px}
 }
 </style>
-
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','848758444744237');fbq('track','PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=848758444744237&ev=PageView&noscript=1"/></noscript>
-
 </head>
 
 <body>
-
-<!-- PARTICLES -->
-<script>
-for(let i = 0; i < 20; i++) {
-    let p = document.createElement("div");
-    p.className = "particle";
-    p.style.left = Math.random() * 100 + "vw";
-    p.style.animationDuration = (12 + Math.random() * 10) + "s";
-    document.body.appendChild(p);
-}
-</script>
-
-<!-- SAME HTML -->
-<div class="card">
-    <div class="logo-wrap">
-        <div class="logo-inner">
-            <img src="https://uploads.onecompiler.io/446vwj75z/448zrd6vz/WhatsApp%20Image%202025-12-29%20at%2018.24.42.jpeg" alt="Gujrati Trader" loading="eager">
-        </div>
+<div class="container">
+  <div class="logo-wrap">
+    <div class="logo-gold">
+      <img src="https://uploads.onecompiler.io/445e5df86/445tc7ue3/330.png" alt="Gujarati Trader">
     </div>
+  </div>
 
-    <div class="title-section">
-        <h1>Gujrati Trader</h1>
-    </div>
+  <h1>GUJARATI TRADER</h1>
+  <div class="sub">Market Education • Discipline • Risk Awareness</div>
 
-    <div class="sub">Premium Trading & Market Education</div>
+  <div class="info-box">
+    <h3>🎯 What You'll Learn:</h3>
+    <ul>
+      <li>📊 Chart Reading & Technical Levels</li>
+      <li>📈 Nifty • BankNifty • Stocks</li>
+      <li>🛡️ Risk Management Education</li>
+    </ul>
+  </div>
 
-    <div class="features">
-        <div class="feature">
-            <i class="fas fa-chart-line"></i>Advanced Market Education
-        </div>
-        <div class="feature">
-            <i class="fas fa-signal"></i>Nifty • BankNifty • Stocks
-        </div>
-        <div class="feature">
-            <i class="fas fa-shield-alt"></i>Risk & Capital Protection
-        </div>
-        <div class="feature">
-            <i class="fas fa-gem"></i>No Tips • Only Strategy
-        </div>
-    </div>
+  <a class="join-btn" href="#" onclick="trackTelegramSubscribe()">
+    🚀 JOIN OUR TELEGRAM NOW
+  </a>
 
-    <!-- ✅ MULTIPLE WORKING LINKS -->
-    <button class="telegram-btn" id="telegramBtn">
-        <i class="fab fa-telegram-plane"></i>
-        JOIN PREMIUM TELEGRAM
-    </button>
+  <div class="live">🔴 Community Learning Update</div>
 
-    <div class="stars">
-        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-    </div>
-    <div class="rating">Trusted by serious traders</div>
+  <div class="client-box">
+    <div class="profit">Live Chart Learning</div>
+    <div class="small">Educational market discussion only</div>
+  </div>
 
-    <div class="customers-box" id="customersBox">
-        <div class="customers-title">
-            <i class="fas fa-users"></i>Recent Profits
-        </div>
-        <div class="customer-list" id="customerList"></div>
-    </div>
-
-    <div class="disclaimer">
-        Educational purpose only. No tips or guarantees.<br>
-        Market investments are subject to market risk.
-    </div>
+  <div class="warn">
+    ⚠️ Educational purpose only. No tips, no guarantees.<br>
+    Market participation involves risk. Trade responsibly.
+  </div>
 </div>
 
-<!-- ✅ FIXED JAVASCRIPT - 3 WORKING METHODS -->
+<!-- ✅ FIXED & FASTER TELEGRAM SCRIPT -->
 <script>
-const traderNames = ['Jay Patel', 'Ravi Shah', 'Meera Desai', 'Amit Gandhi', 'Priya Thakkar', 'Vikram Mehta'];
-const symbols = ['NIFTY', 'BANKNIFTY', 'RELIANCE', 'TCS', 'HDFC'];
-
-function getRandomProfit() {
-    if(Math.random() < 0.92) {
-        return `+₹${(Math.floor(Math.random() * 150000 + 50000)).toLocaleString()}`;
-    } else {
-        return `-₹${Math.floor(Math.random() * 1000 + 1000)}`;
-    }
+function trackTelegramSubscribe(){
+  if(!localStorage.getItem('tg_subscribed')){
+    fbq('track','Subscribe',{platform:'telegram'});
+    localStorage.setItem('tg_subscribed','1');
+  }
+  // Instant redirect (50ms)
+  setTimeout(function(){
+    window.location.href = "https://t.me/+qW__ocDhysNhOGJl";
+  }, 50);
 }
-
-function createCustomerItem() {
-    const name = traderNames[Math.floor(Math.random() * traderNames.length)];
-    const symbol = symbols[Math.floor(Math.random() * symbols.length)];
-    const profit = getRandomProfit();
-    return `
-        <div class="customer-item">
-            <span class="customer-name">${name}</span>
-            <span class="profit ${profit.includes('+') ? 'positive' : 'negative'}">(${symbol}) ${profit}</span>
-        </div>
-    `;
-}
-
-function generateCustomers() {
-    const list = document.getElementById('customerList');
-    if(list) {
-        list.innerHTML = '';
-        for(let i = 0; i < 6; i++) {
-            list.innerHTML += createCustomerItem();
-        }
-    }
-}
-
-generateCustomers();
-setInterval(generateCustomers, 6000);
-
-let tracked = false;
-document.getElementById('telegramBtn').onclick = function() {
-    if(!tracked && typeof fbq !== 'undefined') {
-        fbq('track', 'Subscribe', {value: 999, currency: 'INR'});
-        tracked = true;
-    }
-    
-    // ✅ METHOD 1: Direct Telegram App (सबसे अच्छा)
-    window.open('tg://join/?invite=qW__ocDhysNhOGJl', '_blank');
-    
-    // ✅ METHOD 2: Fallback (अगर tg:// न चले)
-    setTimeout(() => {
-        window.open('https://t.me/+qW__ocDhysNhOGJl', '_blank');
-    }, 500);
-};
 </script>
 
 </body>
